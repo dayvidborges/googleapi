@@ -72,9 +72,9 @@ class GoogleEngine():
         deve contre reader ou writer como role.
 
         Args:
-            IDS (list, optional): IDS dos arquivos a serem carregados. Defaults to list.
-            emails (list, optional): e-mail dos usuarios a atualizar. Defaults to list.
-            role (list, optional): role (reader,writer). Defaults to str.
+            IDS (list): IDS dos arquivos a serem carregados.
+            emails (list): e-mail dos usuarios a atualizar.
+            role (list): role (reader,writer).
         """
         drive_service = self.drive_service
         for file_id in IDS:
@@ -104,7 +104,7 @@ class GoogleEngine():
 
         Args:
             folderName (str): Nome da pasta a ser criada.
-            parentFolderId (str, optional): id da pasta a ser criada dentro. Defaults to None.
+            parentFolderId (str): id da pasta a ser criada dentro.
         """
         drive_service = self.drive_service
         metadata = {
@@ -145,7 +145,7 @@ class GoogleEngine():
         """Lista todos os elementos na apresentação
 
         Args:
-            presentation_id (str, optional): ID da apresentação. Defaults to str.
+            presentation_id (str): ID da apresentação.
         """
         
         slides_service = self.slides_service
@@ -169,7 +169,7 @@ class GoogleEngine():
         """Lista todos os elementos de texto na apresentação
 
         Args:
-            presentation_id (str, optional): ID da apresentação. Defaults to str.
+            presentation_id (str): ID da apresentação.
         """
         
         slides_service = self.slides_service
@@ -226,7 +226,7 @@ class GoogleEngine():
 
         response = slides_service.presentations().batchUpdate(presentationId=presentation_id, body=body).execute()
     
-    def copiar_arquivo(self,file_id, copyName):
+    def copyFile(self,file_id, copyName):
         """copia um arquivo no msm local do arquivo a ser copiadio
 
         Args:
